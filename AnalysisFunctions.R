@@ -237,9 +237,9 @@ TwitterAnalysis <- function(FilePath){
   
   ##Map with points for sentiment
   pdf("SenMap.pdf")
-  #plot(newmap, xlim=c(-6,0), ylim=c(50,60), asp=1) #UK map
-  plot(newmap, xlim=c(-10,10), ylim=c(30,70), asp=1) #Europe ish
-  #plot(newmap, xlim=c(,), ylim=c(,), asp=1) #World map
+  #plot(newmap, xlim=c(-6,0), ylim=c(50,60), asp=1, main="Sentiment map") #UK map
+  plot(newmap, xlim=c(-10,10), ylim=c(30,70), asp=1, main="Sentiment map") #Europe ish
+  #plot(newmap, xlim=c(,), ylim=c(,), asp=1, main="Sentiment map") #World map
   
   ##Plots points onto map
   points(place$place_lon, place$place_lat, col=heat.colors(sen$sen+6), pch=20)
