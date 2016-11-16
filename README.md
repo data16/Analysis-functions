@@ -6,7 +6,7 @@ TextAnalysis is designed for .txt files.
 TwitterAnalysis is designed for Twitter data in .json format, it parses the tweets into data frame.  
 
 The function exports into the working directory the following:
-    -spreadsheet of the 25 most frequent words and their frequencies
+    ..*spreadsheet of the 25 most frequent words and their frequencies
     -A graph word cloud of the top 150 most frequent words
     -LDA key results (a spreadsheet of how frequently a word appears and the LDA topic it was assigned to)
     -N-grams (most frequent n-grams and a word cloud of them)
