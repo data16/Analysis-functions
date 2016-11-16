@@ -1,6 +1,5 @@
 ##Analysis functions
 
-
 The following functions take a file path as input and run analysis.
 The functions will install and run all the required package.
 TextAnalysis is designed for .txt files.
