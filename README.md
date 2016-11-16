@@ -17,11 +17,13 @@ The function exports into the working directory the following:
 -A spreadsheet of text and sentiment is also outputted 
 
 Potential errors includes the following:
+
 -If the format is not right, it will be unable to run
 -file path needs to be specified if not working directors is set
 -Often on the word clouds a non-fatal error occurs as some of the words or phases may be to long to plot
 
 Example of how to run the function:
+
 -TextAnalysis("alldata.txt")
 -TwitterAnalysis("tweets4.json")
 
