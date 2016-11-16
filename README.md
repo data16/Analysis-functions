@@ -1,4 +1,4 @@
-##Analysis functions
+#Analysis functions
 
 The following functions take a file path as input and run analysis.
 The functions will install and run all the required package.
@@ -6,7 +6,7 @@ TextAnalysis is designed for .txt files.
 TwitterAnalysis is designed for Twitter data in .json format, it parses the tweets into data frame.  
 
 
-#The function exports into the working directory the following:
+##The function exports into the working directory the following:
 
 -spreadsheet of the 25 most frequent words and their frequencies
 
@@ -25,7 +25,7 @@ TwitterAnalysis is designed for Twitter data in .json format, it parses the twee
 -A spreadsheet of text and sentiment is also outputted 
 
 
-#Potential errors includes the following:
+##Potential errors includes the following:
 
 -If the format is not right, it will be unable to run
 
@@ -34,7 +34,7 @@ TwitterAnalysis is designed for Twitter data in .json format, it parses the twee
 -Often on the word clouds a non-fatal error occurs as some of the words or phases may be to long to plot
 
 
-#Example of how to run the function:
+##Example of how to run the function:
 
 -TextAnalysis("alldata.txt")
 
