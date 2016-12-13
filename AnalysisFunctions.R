@@ -123,10 +123,10 @@ TwitterAnalysis <- function(FilePath){
     docs <- tm_map(docs, stemDocument)
   
     ##Document term matrix, which describes the frequency of the words in the text
-    tdm <- TermDocumentMatrix(docs)
+    dtm <- DocumentTermMatrix(docs)
   
     ##Sorts to give a list of most common words and their frequencies (mostly head displays this)
-    m <- as.matrix(tdm)
+    m <- as.matrix(dtm)
     v <- sort(rowSums(m),decreasing=TRUE)
     d <- data.frame(word = names(v),freq=v)
     MostFrequentWords <- as.data.frame(head(v, 25))
@@ -154,7 +154,7 @@ TwitterAnalysis <- function(FilePath){
     ##Number of topics
     k <- 10
     ##Run LDA using Gibbs sampling
-    ldaOut <-LDA(tdm,k, method="Gibbs", control=list(nstart=nstart, seed = seed, best=best, burnin = burnin, iter = iter, thin=thin))
+    ldaOut <-LDA(dtm,k, method="Gibbs", control=list(nstart=nstart, seed = seed, best=best, burnin = burnin, iter = iter, thin=thin))
   
     ##Write out results of LDA
     ##Gives output for which topic each word belongs to 
@@ -329,10 +329,10 @@ TextAnalysis <- function(FilePath){
     docs <- tm_map(docs, stemDocument)
   
     ##Document term matrix, which describes the frequency of the words in the text
-    tdm <- TermDocumentMatrix(docs)
+    dtm <- DocumentTermMatrix(docs)
   
     ##Sorts to give a list of most common words and their frequencies (mostly head displays this)
-    m <- as.matrix(tdm)
+    m <- as.matrix(dtm)
     v <- sort(rowSums(m),decreasing=TRUE)
     d <- data.frame(word = names(v),freq=v)
     MostFrequentWords <- as.data.frame(head(v, 25))
@@ -360,7 +360,7 @@ TextAnalysis <- function(FilePath){
     ##Number of topics
     k <- 10
     ##Run LDA using Gibbs sampling
-    ldaOut <-LDA(tdm,k, method="Gibbs", control=list(nstart=nstart, seed = seed, best=best, burnin = burnin, iter = iter, thin=thin))
+    ldaOut <-LDA(dtm,k, method="Gibbs", control=list(nstart=nstart, seed = seed, best=best, burnin = burnin, iter = iter, thin=thin))
   
     ##Write out results of LDA
     ##Gives output for which topic each word belongs to 
