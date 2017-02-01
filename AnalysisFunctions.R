@@ -107,7 +107,7 @@ TwitterAnalysis <- function(FilePath){
     docs <- tm_map(docs, removeNumbers)
   
     ##Remove english common stopwords
-    docs <- tm_map(docs, removeWords, stopwords("english"))
+    docs <- tm_map(docs, removeWords, stopwords("en"))
   
     ##Remove your own stop word
     ##specify your stopwords as a character vector
@@ -171,9 +171,9 @@ TwitterAnalysis <- function(FilePath){
     ##bi/tri-grams
     ##Toeknis with quanteda 
     ##Reads the file and assigns to file path
-    ##replace the stop words part with the following to remove your own stop works...   ignoredFeatures=c("","",stopwords("english")) 
+    ##replace the stop words part with the following to remove your own stop works...   ignoredFeatures=c("","",stopwords("en")) 
   
-    token2dfm <- dfm(text, toLower=TRUE, removeNumbers=TRUE, removePunct = TRUE, removeSeparators=TRUE, removeTwitter=TRUE, stem=TRUE, ignoredFeatures=c("t.co","rt","https",stopwords("english")), ngrams=2)
+    token2dfm <- dfm(text, toLower=TRUE, removeNumbers=TRUE, removePunct = TRUE, removeSeparators=TRUE, removeTwitter=TRUE, stem=TRUE, ignoredFeatures=c("t.co","rt","https",stopwords("en")), ngrams=2)
     t2 <- topfeatures(token2dfm,20)
     t2 <- as.data.frame(t2)
     colnames(t2) <- "Frequency"
@@ -182,7 +182,7 @@ TwitterAnalysis <- function(FilePath){
     plot(token2dfm, max.words=100, colors=brewer.pal(8, "Dark2"))
     dev.off()
   
-    token3dfm <- dfm(text, toLower=TRUE, removeNumbers=TRUE, removePunct = TRUE, removeSeparators=TRUE, removeTwitter=TRUE, stem=TRUE, ignoredFeatures=c("t.co","rt","https",stopwords("english")), ngrams=3)
+    token3dfm <- dfm(text, toLower=TRUE, removeNumbers=TRUE, removePunct = TRUE, removeSeparators=TRUE, removeTwitter=TRUE, stem=TRUE, ignoredFeatures=c("t.co","rt","https",stopwords("en")), ngrams=3)
     t3 <- topfeatures(token3dfm,20)
     t3 <- as.data.frame(t3)
     colnames(t3) <- "Frequency"
@@ -191,7 +191,7 @@ TwitterAnalysis <- function(FilePath){
     plot(token3dfm, max.words=100, colors=brewer.pal(8, "Dark2"))
     dev.off()
   
-    token4dfm <- dfm(text, toLower=TRUE, removeNumbers=TRUE, removePunct = TRUE, removeSeparators=TRUE, removeTwitter=TRUE, stem=TRUE, ignoredFeatures=c("t.co","rt","https",stopwords("english")), ngrams=4)
+    token4dfm <- dfm(text, toLower=TRUE, removeNumbers=TRUE, removePunct = TRUE, removeSeparators=TRUE, removeTwitter=TRUE, stem=TRUE, ignoredFeatures=c("t.co","rt","https",stopwords("en")), ngrams=4)
     t4 <- topfeatures(token4dfm,20)
     t4 <- as.data.frame(t4)
     colnames(t4) <- "Frequency"
@@ -379,7 +379,7 @@ TextAnalysis <- function(FilePath){
     ##Reads the file and assigns to file path
     ##replace the stop words part with the following to remove your own stop works...   ignoredFeatures=c("","",stopwords("english")) 
   
-    token2dfm <- dfm(text, toLower=TRUE, removeNumbers=TRUE, removePunct = TRUE, removeSeparators=TRUE, removeTwitter=TRUE, stem=TRUE, ignoredFeatures=c("t.co","rt","https",stopwords("english")), ngrams=2)
+    token2dfm <- dfm(text, toLower=TRUE, removeNumbers=TRUE, removePunct = TRUE, removeSeparators=TRUE, removeTwitter=TRUE, stem=TRUE, ignoredFeatures=c("t.co","rt","https",stopwords("en")), ngrams=2)
     t2 <- topfeatures(token2dfm,20)
     t2 <- as.data.frame(t2)
     colnames(t2) <- "Frequency"
@@ -388,7 +388,7 @@ TextAnalysis <- function(FilePath){
     plot(token2dfm, max.words=100, colors=brewer.pal(8, "Dark2"))
     dev.off()
   
-    token3dfm <- dfm(text, toLower=TRUE, removeNumbers=TRUE, removePunct = TRUE, removeSeparators=TRUE, removeTwitter=TRUE, stem=TRUE, ignoredFeatures=c("t.co","rt","https",stopwords("english")), ngrams=3)
+    token3dfm <- dfm(text, toLower=TRUE, removeNumbers=TRUE, removePunct = TRUE, removeSeparators=TRUE, removeTwitter=TRUE, stem=TRUE, ignoredFeatures=c("t.co","rt","https",stopwords("en")), ngrams=3)
     t3 <- topfeatures(token3dfm,20)
     t3 <- as.data.frame(t3)
     colnames(t3) <- "Frequency"
@@ -397,7 +397,7 @@ TextAnalysis <- function(FilePath){
     plot(token3dfm, max.words=100, colors=brewer.pal(8, "Dark2"))
     dev.off()
   
-    token4dfm <- dfm(text, toLower=TRUE, removeNumbers=TRUE, removePunct = TRUE, removeSeparators=TRUE, removeTwitter=TRUE, stem=TRUE, ignoredFeatures=c("t.co","rt","https",stopwords("english")), ngrams=4)
+    token4dfm <- dfm(text, toLower=TRUE, removeNumbers=TRUE, removePunct = TRUE, removeSeparators=TRUE, removeTwitter=TRUE, stem=TRUE, ignoredFeatures=c("t.co","rt","https",stopwords("en")), ngrams=4)
     t4 <- topfeatures(token4dfm,20)
     t4 <- as.data.frame(t4)
     colnames(t4) <- "Frequency"
